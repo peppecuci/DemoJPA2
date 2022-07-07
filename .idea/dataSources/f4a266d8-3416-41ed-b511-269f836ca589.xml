@@ -1181,192 +1181,226 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="337" parent="324" name="grade">
+    <table id="337" parent="324" name="course_section">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="338" parent="324" name="professor">
+    <table id="338" parent="324" name="grade">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="339" parent="324" name="section">
+    <table id="339" parent="324" name="professor">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="340" parent="324" name="student">
+    <table id="340" parent="324" name="section">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="341" parent="336" name="course_id">
+    <table id="341" parent="324" name="student">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="342" parent="336" name="course_id">
       <DataType>varchar(8)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="342" parent="336" name="course_name">
+    <column id="343" parent="336" name="course_name">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="343" parent="336" name="course_ects">
+    <column id="344" parent="336" name="course_ects">
       <DataType>decimal(3,1 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="344" parent="336" name="professor_id">
+    <column id="345" parent="336" name="professor_id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="345" parent="336" name="FK_course_professor">
+    <foreign-key id="346" parent="336" name="FK_course_professor">
       <ColNames>professor_id</ColNames>
       <RefColNames>professor_id</RefColNames>
       <RefTableName>professor</RefTableName>
     </foreign-key>
-    <index id="346" parent="336" name="FK_course_professor">
+    <index id="347" parent="336" name="FK_course_professor">
       <ColNames>professor_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="347" parent="336" name="PRIMARY">
+    <key id="348" parent="336" name="PRIMARY">
       <ColNames>course_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="348" parent="337" name="grade">
+    <column id="349" parent="337" name="course_id">
+      <DataType>varchar(8)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="350" parent="337" name="section_id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="351" parent="337" name="fk_coursesection_course">
+      <ColNames>course_id</ColNames>
+      <RefColNames>course_id</RefColNames>
+      <RefTableName>course</RefTableName>
+    </foreign-key>
+    <foreign-key id="352" parent="337" name="fk_coursesection_section">
+      <ColNames>section_id</ColNames>
+      <RefColNames>section_id</RefColNames>
+      <RefTableName>section</RefTableName>
+    </foreign-key>
+    <index id="353" parent="337" name="fk_coursesection_section">
+      <ColNames>section_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="354" parent="337" name="PRIMARY">
+      <ColNames>course_id
+section_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="355" parent="338" name="grade">
       <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="349" parent="337" name="lower_bound">
+    <column id="356" parent="338" name="lower_bound">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="350" parent="337" name="upper_bound">
+    <column id="357" parent="338" name="upper_bound">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <key id="351" parent="337" name="PRIMARY">
+    <key id="358" parent="338" name="PRIMARY">
       <ColNames>grade</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="352" parent="338" name="professor_id">
+    <column id="359" parent="339" name="professor_id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="353" parent="338" name="professor_name">
+    <column id="360" parent="339" name="professor_name">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="354" parent="338" name="professor_surname">
+    <column id="361" parent="339" name="professor_surname">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="355" parent="338" name="section_id">
+    <column id="362" parent="339" name="section_id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="356" parent="338" name="professor_office">
+    <column id="363" parent="339" name="professor_office">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="357" parent="338" name="professor_email">
+    <column id="364" parent="339" name="professor_email">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="358" parent="338" name="professor_hire_date">
+    <column id="365" parent="339" name="professor_hire_date">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="359" parent="338" name="professor_wage">
+    <column id="366" parent="339" name="professor_wage">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <foreign-key id="360" parent="338" name="FK_professor_section">
+    <foreign-key id="367" parent="339" name="FK_professor_section">
       <ColNames>section_id</ColNames>
       <RefColNames>section_id</RefColNames>
       <RefTableName>section</RefTableName>
     </foreign-key>
-    <index id="361" parent="338" name="FK_professor_section">
+    <index id="368" parent="339" name="FK_professor_section">
       <ColNames>section_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="362" parent="338" name="PRIMARY">
+    <key id="369" parent="339" name="PRIMARY">
       <ColNames>professor_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="363" parent="339" name="section_id">
+    <column id="370" parent="340" name="section_id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="364" parent="339" name="section_name">
+    <column id="371" parent="340" name="section_name">
       <DataType>varchar(50)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="365" parent="339" name="delegate_id">
+    <column id="372" parent="340" name="delegate_id">
       <DataType>int(11)|0s</DataType>
       <Position>3</Position>
     </column>
-    <key id="366" parent="339" name="PRIMARY">
+    <key id="373" parent="340" name="PRIMARY">
       <ColNames>section_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="367" parent="340" name="student_id">
+    <column id="374" parent="341" name="student_id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="368" parent="340" name="first_name">
+    <column id="375" parent="341" name="first_name">
       <DataType>varchar(50)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="369" parent="340" name="last_name">
+    <column id="376" parent="341" name="last_name">
       <DataType>varchar(50)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="370" parent="340" name="birth_date">
+    <column id="377" parent="341" name="birth_date">
       <DataType>datetime|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="371" parent="340" name="login">
+    <column id="378" parent="341" name="login">
       <DataType>varchar(50)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="372" parent="340" name="section_id">
+    <column id="379" parent="341" name="section_id">
       <DataType>int(11)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="373" parent="340" name="year_result">
+    <column id="380" parent="341" name="year_result">
       <DataType>int(11)|0s</DataType>
       <Position>7</Position>
     </column>
-    <column id="374" parent="340" name="course_id">
+    <column id="381" parent="341" name="course_id">
       <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <foreign-key id="375" parent="340" name="FK_student_section">
+    <foreign-key id="382" parent="341" name="FK_student_section">
       <ColNames>section_id</ColNames>
       <RefColNames>section_id</RefColNames>
       <RefTableName>section</RefTableName>
     </foreign-key>
-    <index id="376" parent="340" name="FK_student_section">
+    <index id="383" parent="341" name="FK_student_section">
       <ColNames>section_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="377" parent="340" name="PRIMARY">
+    <key id="384" parent="341" name="PRIMARY">
       <ColNames>student_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>

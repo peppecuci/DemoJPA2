@@ -23,9 +23,20 @@ public class Main {
 //        Section s = sectionDAO.getOne(manager, id);
 //        System.out.println(s);
 
-        List<Section> list = sectionDAO.getAll(manager);
-        list.forEach (System.out::println);
+//        List<Section> list = sectionDAO.getAll(manager);
+//        list.forEach (System.out::println);
+        Student s = manager.find(Student.class, 5);
+        Course c = manager.find(Course.class, "EG1010");
+        Section section = manager.find(Section.class, 1020);
 
+        manager.getTransaction().begin();
+        section.setCourses( List.of(c) );
+        manager.getTransaction().commit();
+
+        section = manager.find(Section.class, 1010);
+
+
+        System.out.println( section );
 
 
         emf.close();
